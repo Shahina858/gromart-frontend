@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chart container safety: ensure canvases and responsive-chart wrappers have non-negative minimums
+	 This helps avoid Chart.js errors when a parent is temporarily hidden or the browser blocks storage
+*/
+.recharts-responsive-container, .chart-container, canvas {
+	min-width: 0;
+	min-height: 0;
+}
